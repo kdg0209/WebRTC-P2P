@@ -6,6 +6,8 @@ COPY package.json /app/package.json
 
 RUN npm install --no-cache
 
+# Node ENV
+ENV NODE_ENV=development
+
 COPY . /app
 CMD ["npm", "run", "server"]
-
