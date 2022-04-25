@@ -40,26 +40,3 @@ services:
 # https://miiingo.tistory.com/286
 # https://seill.tistory.com/419
 # https://hcnam.tistory.com/25
-
-# docker stop mentor-webrtc-client
-# docker stop mentor-webrtc-server
-
-# docker rm mentor-webrtc-client
-# docker rm mentor-webrtc-server
-
-# docker images
-# docker rmi intween/mentor-webrtc-client-dev
-# docker rmi intween/mentor-webrtc-server-dev
-
-# sudo docker run -d -p 3000:3000 --name mentor-webrtc-client intween/mentor-webrtc-client-dev
-# sudo docker run -d -p 3001:3001 --name mentor-webrtc-server intween/mentor-webrtc-server-dev
-
-# docker exec -it mentor-webrtc-client /bin/sh
-# docker exec -it mentor-webrtc-server /bin/sh
-
-# turn 계종 생성
-# turnadmin -a -u mentor -p intween09 -r mentordev
-
-# ssl 디렉토리 node server로 복사
-# docker container cp /etc/letsencrypt/archive/webrtc.shop mentor-webrtc-server:/app/ssl/letsencrypt/live/
-# docker container cp /home/webrtc/server/config mentor-webrtc-server:/app/
