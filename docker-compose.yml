@@ -1,0 +1,65 @@
+version: '3.3'
+
+services:
+  client:
+    platform: linux/amd64
+    image: intween/mentor-webrtc-client-dev:latest
+    build: # Dockerfile 빌드
+      context: ./packages/client # Dockerfile 빌드 경로
+    container_name: client
+    restart: 'on-failure'
+    ports:
+      - 3000:3000
+    volumes: # 볼륨 설정
+      - ./packages/client/build:/usr/share/nginx/html
+
+  server:
+    platform: linux/amd64
+    image: intween/mentor-webrtc-server-dev:latest
+    env_file:
+      - './packages/server/config/.env.service.dev'
+    build: # Dockerfile 빌드
+      context: ./packages/server # Dockerfile 빌드 경로
+    container_name: server # 컨테이너 명
+    restart: 'on-failure'
+    ports:
+      - '3001:3001'
+    volumes: # 볼륨 설정
+      - './packages/server:/app'
+      - '/app/node_modules'
+    environment: # 환경변수 설정
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
+# docker-compose down
+# docker-compose build
+# https://songjang.tistory.com/29
+# https://github.com/sbjang123456/docker-fullstack/blob/main/docker-compose.yml
+# https://velog.io/@oyeon/HTTPS-%EC%A0%81%EC%9A%A9-Lets-Encrypt
+# https://miiingo.tistory.com/286
+# https://seill.tistory.com/419
+# https://hcnam.tistory.com/25
+
+# docker stop mentor-webrtc-client
+# docker stop mentor-webrtc-server
+
+# docker rm mentor-webrtc-client
+# docker rm mentor-webrtc-server
+
+# docker images
+# docker rmi intween/mentor-webrtc-client-dev
+# docker rmi intween/mentor-webrtc-server-dev
+
+# sudo docker run -d -p 3000:3000 --name mentor-webrtc-client intween/mentor-webrtc-client-dev
+# sudo docker run -d -p 3001:3001 --name mentor-webrtc-server intween/mentor-webrtc-server-dev
+
+# docker exec -it mentor-webrtc-client /bin/sh
+# docker exec -it mentor-webrtc-server /bin/sh
+
+# turn 계종 생성
+# turnadmin -a -u mentor -p intween09 -r mentordev
+
+# ssl 디렉토리 node server로 복사
+# docker container cp /etc/letsencrypt/archive/webrtc.shop mentor-webrtc-server:/app/ssl/letsencrypt/live/
+# docker container cp /home/webrtc/server/config mentor-webrtc-server:/app/

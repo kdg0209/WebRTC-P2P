@@ -1,0 +1,37 @@
+{
+  "name": "webrtc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.4",
+    "react": "^16.8.6",
+    "react-chat-ui": "0.3.2",
+    "react-dom": "^16.8.6",
+    "react-draggable": "^4.4.4",
+    "react-emoji": "^0.5.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "2.1.8",
+    "react-scroll-to-bottom": "^1.3.2",
+    "sass": "^1.50.0",
+    "shortid": "^2.2.14",
+    "simple-peer": "^9.5.0",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  },
+  "alias": [
+    "video-chat.now.sh"
+  ],
+  "scripts": {
+    "start": "react-scripts --max-http-header-size 16000 start",
+    "start:local": "node --max-http-header-size=24576 server/server.js & export NODE_ENV=local &&  HTTPS=false react-scripts start",
+    "build": "export NODE_ENV=production && react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

@@ -1,0 +1,32 @@
+.messageForm {
+  display: flex;
+  border-top: 1px solid rgb(215, 215, 215);
+}
+
+.messageFormInput {
+  border: none;
+  border-radius: 0;
+  padding: 4%;
+  width: 80%;
+  font-size: 13px;
+  border: none;
+  border-radius: 0 0 0 10px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #4857f3;
+  display: inline-block;
+  border: none;
+  width: 20%;
+  border-radius: 0 0 10px 0;
+  font-size: 12px;
+}
