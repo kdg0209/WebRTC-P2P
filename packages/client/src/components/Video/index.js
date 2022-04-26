@@ -269,7 +269,7 @@ function video(props) {
   return (
     <div className="video-wrapper">
       <div className="logoBox">
-        <img src="/images/logo/logo120x.png" />
+        <img src="/favicon.ico" />
       </div>
       <div className="local-video-wrapper">
         <div
