@@ -1,13 +1,15 @@
 ## React-Node WebRTC Example
 
-Client
+Client : Port 3000
 ```
-packages/client/
+cd packages/client/
+npm i
 npm run start
 ```
 
-Server
+Server : Port 3001
 ```
 cd packages/server/
+npm i
 npm run server
 ```
