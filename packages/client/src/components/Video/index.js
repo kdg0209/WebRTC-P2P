@@ -20,9 +20,7 @@ function video(props) {
   const pcConfig = {
     iceServers: [
       {
-        urls: 'turn:3.39.185.174:3478?transport=tcp',
-        credential: 'intween09',
-        username: 'mentor',
+        urls: 'stun:stun.l.google.com:19302',
       },
     ],
   };
@@ -209,8 +207,7 @@ function video(props) {
   };
 
   useEffect(() => {
-    // socketRef.current = io.connect("http://localhost:3001");
-    socketRef.current = io.connect('https://webrtc.shop:3001');
+    socketRef.current = io.connect("http://localhost:3001");
     peerRef.current = new RTCPeerConnection(pcConfig);
 
     socketRef.current.on('userConnection', (ConnectionCount) => {
