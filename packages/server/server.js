@@ -1,9 +1,12 @@
-const express = require("express");
-const http = require("http");
+import express from "express";
+import fs from "fs";
+import http from "http";
+import cors from "cors";
+import { socketInit } from "./socket/socket.js";
 const app = express();
-const cors = require("cors");
 const server = http.createServer(app);
 const PORT = 3001;
+
 app.use(cors());
 
 socketInit(server);
